@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image upload test page</title>
+</head>
+<body>
+<h2>Enter image filename:</h2>
+<form id="the_forms_id" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+  <input type="file" id="myfile" name="myfile"/> <br/>
+  <input type="submit" id="submit" name="submit" value="submit"/>
+</form>
+
+<% if @image %>
+  <h3>You uploaded:</h3>
+  <img src="data:image/jpeg;base64,<%= @image %>" alt="your image">
+  <p><%= @image_name %> (<%= @image_type %>)</p>
+<% end %>
+
+</body>
+</html>
