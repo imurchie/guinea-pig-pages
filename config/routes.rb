@@ -5,4 +5,6 @@ SauceGuineaApp::Application.routes.draw do
       post "file_upload"
     end
   end
+
+  root :to => "guinea_pig#file_upload"
 end
